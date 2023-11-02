@@ -53,9 +53,9 @@ public final class ObjenesisHelper
 	 *            Class to instantiate
 	 * @return New instance of clazz
 	 */
-	public static <T> T newInstance(Class<T> clazz)
+	public static <T> T newInstance(Class<T> clazz, Object... initArgs)
 	{
-		return OBJENESIS_STD.newInstance(clazz);
+		return OBJENESIS_STD.newInstance(clazz, initArgs);
 	}
 
 	/**
@@ -68,15 +68,15 @@ public final class ObjenesisHelper
 	 *            Class to instantiate
 	 * @return New instance of clazz
 	 */
-	public static <T extends Serializable> T newSerializableInstance(Class<T> clazz)
+	public static <T extends Serializable> T newSerializableInstance(Class<T> clazz, Object... initArgs)
 	{
-		return OBJENESIS_SERIALIZER.newInstance(clazz);
+		return OBJENESIS_SERIALIZER.newInstance(clazz, initArgs);
 	}
 
 	/**
 	 * Will pick the best instantiator for the provided class. If you need to create a lot of
 	 * instances from the same class, it is way more efficient to create them from the same
-	 * ObjectInstantiator than calling {@link #newInstance(Class)}.
+	 * ObjectInstantiator than calling {@link #newInstance(Class, Object...)}
 	 *
 	 * @param <T>
 	 *            Type to instantiate
@@ -84,16 +84,16 @@ public final class ObjenesisHelper
 	 *            Class to instantiate
 	 * @return Instantiator dedicated to the class
 	 */
-	public static <T> ObjectInstantiator<T> getInstantiatorOf(Class<T> clazz)
+	public static <T> ObjectInstantiator<T> getInstantiatorOf(Class<T> clazz, Object... initArgs)
 	{
-		return OBJENESIS_STD.getInstantiatorOf(clazz);
+		return OBJENESIS_STD.getInstantiatorOf(clazz, initArgs);
 	}
 
 	/**
-	 * Same as {@link #getInstantiatorOf(Class)} but providing an instantiator emulating
+	 * Same as {@link #getInstantiatorOf(Class, Object...)} but providing an instantiator emulating
 	 * ObjectInputStream.readObject behavior.
 	 * 
-	 * @see #newSerializableInstance(Class)
+	 * @see #newSerializableInstance(Class, Object...)
 	 * @param <T>
 	 *            Type to instantiate
 	 * @param clazz
@@ -101,8 +101,8 @@ public final class ObjenesisHelper
 	 * @return Instantiator dedicated to the class
 	 */
 	public static <T extends Serializable> ObjectInstantiator<T> getSerializableObjectInstantiatorOf(
-		Class<T> clazz)
+		Class<T> clazz, Object... initArgs)
 	{
-		return OBJENESIS_SERIALIZER.getInstantiatorOf(clazz);
+		return OBJENESIS_SERIALIZER.getInstantiatorOf(clazz, initArgs);
 	}
 }

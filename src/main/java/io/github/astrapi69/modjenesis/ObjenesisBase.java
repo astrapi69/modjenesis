@@ -95,7 +95,7 @@ public class ObjenesisBase implements Objenesis
 	/**
 	 * Will pick the best instantiator for the provided class. If you need to create a lot of
 	 * instances from the same class, it is way more efficient to create them from the same
-	 * ObjectInstantiator than calling {@link #newInstance(Class)}.
+	 * ObjectInstantiator than calling {@link #newInstance(Class, Object...)}
 	 *
 	 * @param clazz
 	 *            Class to instantiate
