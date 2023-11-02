@@ -66,7 +66,7 @@ public class PercInstantiator<T> implements ObjectInstantiator<T>
 	}
 
 	@SuppressWarnings("unchecked")
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

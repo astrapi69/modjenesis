@@ -51,7 +51,7 @@ public class Android10Instantiator<T> implements ObjectInstantiator<T>
 		newStaticMethod = getNewStaticMethod();
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

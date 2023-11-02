@@ -73,7 +73,7 @@ public class ObjectStreamClassInstantiator<T> implements ObjectInstantiator<T>
 	}
 
 	@SuppressWarnings("unchecked")
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 
 		try

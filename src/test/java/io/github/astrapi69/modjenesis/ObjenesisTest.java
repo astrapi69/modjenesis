@@ -102,7 +102,7 @@ public class ObjenesisTest
 
 class MyStrategy implements InstantiatorStrategy
 {
-	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type)
+	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs)
 	{
 		return null;
 	}

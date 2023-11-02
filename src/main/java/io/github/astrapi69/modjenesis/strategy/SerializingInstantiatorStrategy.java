@@ -61,7 +61,7 @@ public class SerializingInstantiatorStrategy extends BaseInstantiatorStrategy
 	 *            Class to instantiate
 	 * @return The ObjectInstantiator for the class
 	 */
-	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type)
+	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs)
 	{
 		if (!Serializable.class.isAssignableFrom(type))
 		{

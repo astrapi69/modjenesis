@@ -92,7 +92,7 @@ public class PercSerializationInstantiator<T> implements ObjectInstantiator<T>
 	}
 
 	@SuppressWarnings("unchecked")
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

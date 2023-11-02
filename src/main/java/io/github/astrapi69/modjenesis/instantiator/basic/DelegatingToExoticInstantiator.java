@@ -111,8 +111,8 @@ public abstract class DelegatingToExoticInstantiator<T> implements ObjectInstant
 	}
 
 	@Override
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
-		return wrapped.newInstance();
+		return wrapped.newInstance(initArgs);
 	}
 }

@@ -70,7 +70,7 @@ public class AndroidSerializationInstantiator<T> implements ObjectInstantiator<T
 		}
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

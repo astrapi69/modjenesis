@@ -73,7 +73,7 @@ public class SingleInstantiatorStrategy implements InstantiatorStrategy
 	 * @return The ObjectInstantiator for the class
 	 */
 	@SuppressWarnings("unchecked")
-	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type)
+	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs)
 	{
 		try
 		{

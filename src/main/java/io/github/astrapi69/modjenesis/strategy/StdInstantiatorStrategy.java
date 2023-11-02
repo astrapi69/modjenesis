@@ -58,7 +58,7 @@ public class StdInstantiatorStrategy extends BaseInstantiatorStrategy
 	 *            Class to instantiate
 	 * @return The ObjectInstantiator for the class
 	 */
-	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type)
+	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs)
 	{
 
 		if (PlatformDescription.isThisJVM(PlatformDescription.HOTSPOT)

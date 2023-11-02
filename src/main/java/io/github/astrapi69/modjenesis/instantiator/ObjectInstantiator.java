@@ -35,9 +35,11 @@ public interface ObjectInstantiator<T>
 	/**
 	 * Returns a new instance of an object. The returned object's class is defined by the
 	 * implementation.
-	 * 
+	 *
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return A new instance of an object.
 	 */
-	T newInstance();
+	T newInstance(Object... initArgs);
 
 }

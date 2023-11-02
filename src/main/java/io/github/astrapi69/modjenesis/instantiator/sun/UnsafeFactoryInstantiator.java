@@ -54,7 +54,7 @@ public class UnsafeFactoryInstantiator<T> implements ObjectInstantiator<T>
 		this.type = type;
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

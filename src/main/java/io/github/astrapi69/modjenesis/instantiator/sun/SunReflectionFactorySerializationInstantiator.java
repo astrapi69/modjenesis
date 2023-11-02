@@ -71,7 +71,7 @@ public class SunReflectionFactorySerializationInstantiator<T> implements ObjectI
 		mungedConstructor.setAccessible(true);
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

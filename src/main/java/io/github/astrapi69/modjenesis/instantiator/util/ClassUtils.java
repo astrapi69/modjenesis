@@ -24,6 +24,8 @@
  */
 package io.github.astrapi69.modjenesis.instantiator.util;
 
+import java.lang.reflect.InvocationTargetException;
+
 import io.github.astrapi69.modjenesis.ObjenesisException;
 
 /**
@@ -88,16 +90,37 @@ public final class ClassUtils
 		}
 	}
 
-	@SuppressWarnings("deprecation")
-	public static <T> T newInstance(Class<T> clazz)
+	public static <T> T newInstance(Class<T> clazz, Object... initArgs)
 	{
 		try
 		{
-			return clazz.newInstance();
+			return clazz.getDeclaredConstructor(getParameterTypes(initArgs)).newInstance(initArgs);
 		}
-		catch (InstantiationException | IllegalAccessException e)
+		catch (InstantiationException | IllegalAccessException | NoSuchMethodException
+			| InvocationTargetException e)
 		{
 			throw new ObjenesisException(e);
 		}
+	}
+
+	/**
+	 * Get an {@link Class} object array of the given {@link Object} array
+	 *
+	 * @param parameterTypes
+	 *            the parameter types
+	 * @return the {@link Class} object array
+	 */
+	public static Class<?>[] getParameterTypes(Object... parameterTypes)
+	{
+		if (parameterTypes == null || parameterTypes.length == 0)
+		{
+			return new Class<?>[] { };
+		}
+		Class<?>[] parameterTypeClasses = new Class[parameterTypes.length];
+		for (int i = 0; i < parameterTypes.length; i++)
+		{
+			parameterTypeClasses[i] = parameterTypes[i].getClass();
+		}
+		return parameterTypeClasses;
 	}
 }

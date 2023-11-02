@@ -50,7 +50,7 @@ public class GCJSerializationInstantiator<T> extends GCJInstantiatorBase<T>
 	}
 
 	@Override
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

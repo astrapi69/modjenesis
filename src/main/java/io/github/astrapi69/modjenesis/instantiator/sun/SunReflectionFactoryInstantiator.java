@@ -54,7 +54,7 @@ public class SunReflectionFactoryInstantiator<T> implements ObjectInstantiator<T
 		mungedConstructor.setAccessible(true);
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{

@@ -30,6 +30,7 @@ import io.github.astrapi69.modjenesis.ObjenesisException;
 import io.github.astrapi69.modjenesis.instantiator.ObjectInstantiator;
 import io.github.astrapi69.modjenesis.instantiator.annotations.Instantiator;
 import io.github.astrapi69.modjenesis.instantiator.annotations.Typology;
+import io.github.astrapi69.modjenesis.instantiator.util.ClassUtils;
 
 /**
  * Instantiates a class by grabbing the no args constructor and calling Constructor.newInstance().
@@ -46,11 +47,18 @@ public class ConstructorInstantiator<T> implements ObjectInstantiator<T>
 
 	protected Constructor<T> constructor;
 
-	public ConstructorInstantiator(Class<T> type)
+	public ConstructorInstantiator(Class<T> type, Object... initArgs)
 	{
 		try
 		{
-			constructor = type.getDeclaredConstructor((Class<?>[])null);
+			if (initArgs != null && 0 < initArgs.length)
+			{
+				constructor = type.getDeclaredConstructor(ClassUtils.getParameterTypes(initArgs));
+			}
+			else
+			{
+				constructor = type.getDeclaredConstructor((Class<?>[])null);
+			}
 		}
 		catch (Exception e)
 		{
@@ -58,10 +66,14 @@ public class ConstructorInstantiator<T> implements ObjectInstantiator<T>
 		}
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{
+			if (initArgs != null && 0 < initArgs.length)
+			{
+				return constructor.newInstance(initArgs);
+			}
 			return constructor.newInstance((Object[])null);
 		}
 		catch (Exception e)

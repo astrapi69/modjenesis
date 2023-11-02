@@ -47,9 +47,9 @@ public class NewInstanceInstantiator<T> implements ObjectInstantiator<T>
 		this.type = type;
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
-		return ClassUtils.newInstance(type);
+		return ClassUtils.newInstance(type, initArgs);
 	}
 
 }

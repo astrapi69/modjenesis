@@ -43,5 +43,5 @@ public interface InstantiatorStrategy
 	 *            Class that will be instantiated
 	 * @return Dedicated instantiator
 	 */
-	<T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type);
+	<T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs);
 }

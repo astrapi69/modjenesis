@@ -44,7 +44,7 @@ public class NullInstantiator<T> implements ObjectInstantiator<T>
 	/**
 	 * @return Always null
 	 */
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		return null;
 	}

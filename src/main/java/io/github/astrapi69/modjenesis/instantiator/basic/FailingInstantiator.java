@@ -45,7 +45,7 @@ public class FailingInstantiator<T> implements ObjectInstantiator<T>
 	/**
 	 * @return Always throwing an exception
 	 */
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		throw new ObjenesisException("Always failing");
 	}

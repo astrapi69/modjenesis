@@ -87,7 +87,7 @@ public class ObjenesisBase implements Objenesis
 	 *            Class to instantiate
 	 * @return New instance of clazz
 	 */
-	public <T> T newInstance(Class<T> clazz)
+	public <T> T newInstance(Class<T> clazz, Object... initArgs)
 	{
 		return getInstantiatorOf(clazz).newInstance();
 	}
@@ -102,7 +102,7 @@ public class ObjenesisBase implements Objenesis
 	 * @return Instantiator dedicated to the class
 	 */
 	@SuppressWarnings("unchecked")
-	public <T> ObjectInstantiator<T> getInstantiatorOf(Class<T> clazz)
+	public <T> ObjectInstantiator<T> getInstantiatorOf(Class<T> clazz, Object... initArgs)
 	{
 		if (clazz.isPrimitive())
 		{

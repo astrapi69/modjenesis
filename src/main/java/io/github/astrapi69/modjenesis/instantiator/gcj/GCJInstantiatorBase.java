@@ -76,5 +76,5 @@ public abstract class GCJInstantiatorBase<T> implements ObjectInstantiator<T>
 		initialize();
 	}
 
-	public abstract T newInstance();
+	public abstract T newInstance(Object... initArgs);
 }

@@ -53,7 +53,7 @@ public class Android17Instantiator<T> implements ObjectInstantiator<T>
 		objectConstructorId = findConstructorIdForJavaLangObjectConstructor();
 	}
 
-	public T newInstance()
+	public T newInstance(Object... initArgs)
 	{
 		try
 		{
