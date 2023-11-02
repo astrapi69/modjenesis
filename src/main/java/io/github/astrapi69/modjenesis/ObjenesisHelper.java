@@ -68,7 +68,8 @@ public final class ObjenesisHelper
 	 *            Class to instantiate
 	 * @return New instance of clazz
 	 */
-	public static <T extends Serializable> T newSerializableInstance(Class<T> clazz, Object... initArgs)
+	public static <T extends Serializable> T newSerializableInstance(Class<T> clazz,
+		Object... initArgs)
 	{
 		return OBJENESIS_SERIALIZER.newInstance(clazz, initArgs);
 	}
