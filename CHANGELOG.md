@@ -1,10 +1,12 @@
 ## Change log
 ----------------------
 
-Version 1.1-SNAPSHOT
+Version 1.1
 -------------
 
+ADDED:
 
+- new optional array of objects to be passed as arguments to the constructor call in the interfaces Objenesis, InstantiatorStrategy and ObjectInstantiator
 
 Version 1
 -------------
