@@ -4,7 +4,13 @@
 Version 1.2-SNAPSHOT
 -------------
 
+ADDED:
 
+- new optional array of objects to be passed as arguments to the constructor call
+
+CHANGED:
+
+- removed unused dependency lombok
 
 Version 1.1
 -------------

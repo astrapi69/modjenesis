@@ -14,7 +14,8 @@
 
 </div>
 
-Modjenesis is a module for create java objects with reflection.
+Modjenesis is a module for create java objects with reflection as java module.
+Initiate as a clone of objenesis and then modified to be deployed as a java module with JDK version 17.
 
 > Please support this project by simply putting a Github <a class="github-button" href="https://github.com/astrapi69/modjenesis" data-icon="octicon-star" aria-label="Star astrapi69/modjenesis on GitHub">
 > Star ⭐</a>
