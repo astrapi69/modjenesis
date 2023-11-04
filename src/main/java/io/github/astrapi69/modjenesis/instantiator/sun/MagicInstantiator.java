@@ -41,7 +41,7 @@ public class MagicInstantiator<T> extends DelegatingToExoticInstantiator<T>
 
 	public MagicInstantiator(Class<T> type)
 	{
-		super("org.objenesis.instantiator.exotic.MagicInstantiator", type);
+		super("io.github.astrapi69.modjenesis.instantiator.sun.MagicInstantiator", type);
 	}
 
 }

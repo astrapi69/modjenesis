@@ -58,7 +58,7 @@ public class SunReflectionFactoryInstantiator<T> implements ObjectInstantiator<T
 	{
 		try
 		{
-			return mungedConstructor.newInstance((Object[])null);
+			return mungedConstructor.newInstance(initArgs);
 		}
 		catch (Exception e)
 		{

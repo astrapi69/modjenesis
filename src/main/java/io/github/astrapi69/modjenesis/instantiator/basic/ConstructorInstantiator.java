@@ -47,10 +47,15 @@ public class ConstructorInstantiator<T> implements ObjectInstantiator<T>
 
 	protected Constructor<T> constructor;
 
+	private final Class<T> type;
+	private Object[] initArgs;
+
 	public ConstructorInstantiator(Class<T> type, Object... initArgs)
 	{
 		try
 		{
+			this.type = type;
+			this.initArgs = initArgs;
 			if (initArgs != null && 0 < initArgs.length)
 			{
 				constructor = type.getDeclaredConstructor(ClassUtils.getParameterTypes(initArgs));
@@ -72,9 +77,13 @@ public class ConstructorInstantiator<T> implements ObjectInstantiator<T>
 		{
 			if (initArgs != null && 0 < initArgs.length)
 			{
-				return constructor.newInstance(initArgs);
+				if (this.initArgs == null || !this.initArgs.equals(initArgs))
+				{
+					constructor = this.type
+						.getDeclaredConstructor(ClassUtils.getParameterTypes(initArgs));
+				}
 			}
-			return constructor.newInstance((Object[])null);
+			return constructor.newInstance(initArgs);
 		}
 		catch (Exception e)
 		{

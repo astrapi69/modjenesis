@@ -75,7 +75,7 @@ public class SunReflectionFactorySerializationInstantiator<T> implements ObjectI
 	{
 		try
 		{
-			return mungedConstructor.newInstance((Object[])null);
+			return mungedConstructor.newInstance(initArgs);
 		}
 		catch (Exception e)
 		{

@@ -59,6 +59,8 @@ public class SerializingInstantiatorStrategy extends BaseInstantiatorStrategy
 	 *
 	 * @param type
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return The ObjectInstantiator for the class
 	 */
 	public <T> ObjectInstantiator<T> newInstantiatorOf(Class<T> type, Object... initArgs)

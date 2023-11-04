@@ -85,6 +85,8 @@ public class ObjenesisBase implements Objenesis
 	 *
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return New instance of clazz
 	 */
 	public <T> T newInstance(Class<T> clazz, Object... initArgs)
@@ -99,6 +101,8 @@ public class ObjenesisBase implements Objenesis
 	 *
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return Instantiator dedicated to the class
 	 */
 	@SuppressWarnings("unchecked")
@@ -110,12 +114,12 @@ public class ObjenesisBase implements Objenesis
 		}
 		if (cache == null)
 		{
-			return strategy.newInstantiatorOf(clazz);
+			return strategy.newInstantiatorOf(clazz, initArgs);
 		}
 		ObjectInstantiator<?> instantiator = cache.get(clazz.getName());
 		if (instantiator == null)
 		{
-			ObjectInstantiator<?> newInstantiator = strategy.newInstantiatorOf(clazz);
+			ObjectInstantiator<?> newInstantiator = strategy.newInstantiatorOf(clazz, initArgs);
 			instantiator = cache.putIfAbsent(clazz.getName(), newInstantiator);
 			if (instantiator == null)
 			{

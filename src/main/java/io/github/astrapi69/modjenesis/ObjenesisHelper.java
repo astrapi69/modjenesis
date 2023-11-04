@@ -51,6 +51,8 @@ public final class ObjenesisHelper
 	 *            Type instantiated
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return New instance of clazz
 	 */
 	public static <T> T newInstance(Class<T> clazz, Object... initArgs)
@@ -66,6 +68,8 @@ public final class ObjenesisHelper
 	 *            Type instantiated
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return New instance of clazz
 	 */
 	public static <T extends Serializable> T newSerializableInstance(Class<T> clazz,
@@ -83,6 +87,8 @@ public final class ObjenesisHelper
 	 *            Type to instantiate
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return Instantiator dedicated to the class
 	 */
 	public static <T> ObjectInstantiator<T> getInstantiatorOf(Class<T> clazz, Object... initArgs)
@@ -99,6 +105,8 @@ public final class ObjenesisHelper
 	 *            Type to instantiate
 	 * @param clazz
 	 *            Class to instantiate
+	 * @param initArgs
+	 *            an optional array of objects to be passed as arguments to the constructor call
 	 * @return Instantiator dedicated to the class
 	 */
 	public static <T extends Serializable> ObjectInstantiator<T> getSerializableObjectInstantiatorOf(

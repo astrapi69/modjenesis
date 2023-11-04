@@ -40,7 +40,7 @@ public class ProxyingInstantiator<T> extends DelegatingToExoticInstantiator<T>
 
 	public ProxyingInstantiator(Class<T> type)
 	{
-		super("org.objenesis.instantiator.exotic.ProxyingInstantiator", type);
+		super("io.github.astrapi69.modjenesis.instantiator.basic.ProxyingInstantiator", type);
 	}
 
 }
