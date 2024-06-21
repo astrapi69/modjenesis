@@ -1,11 +1,10 @@
-
 dependencies {
-    testImplementation("io.github.astrapi69:silly-io:$sillyIoVersion")
-    testImplementation("io.github.astrapi69:file-worker:$fileWorkerVersion")
-    testImplementation("io.github.astrapi69:throwable:$throwableVersion")
-    testImplementation("io.github.astrapi69:gradle-migration-data:$gradleMigrationDataVersion")
-    testImplementation("org.apache.commons:commons-text:$commonsTextVersion")
-    testImplementation("com.github.meanbeanlib:meanbean:$meanbeanVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher:$junitPlatformLauncherVersion")
+    testImplementation libs.silly.io
+    testImplementation libs.file.worker
+    testImplementation libs.throwable
+    testImplementation libs.gradle.migration.data
+    testImplementation libs.commons.text
+    // Note: use of bundles...
+    testImplementation libs.bundles.unit.testing
+    testRuntimeOnly libs.junit.platform.launcher
 }
